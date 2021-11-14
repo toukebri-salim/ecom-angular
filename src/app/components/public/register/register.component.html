@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+
+<div class="container" style="margin-top: 50px;">
+
+    <div class="card o-hidden border-0 shadow-lg my-5" >
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              </div>
+              <form  class="user" [formGroup]="registerForm" (ngSubmit)="register()">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" formControlName="firstname">
+
+                    <div *ngIf="firstname?.touched && firstname?.invalid">
+                      <small *ngIf=" firstname?.errors?.required" class="text-danger">firstna required</small><br>
+                      <small *ngIf=" firstname?.errors?.pattern" class="text-danger">firstname invalid</small><br>
+                      <small *ngIf=" firstname?.errors?.minlength" class="text-danger">firstname must contain two characters
+                          at least</small>
+                  </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" formControlName="lastname">
+                    <div *ngIf="lastname?.touched && lastname?.invalid">
+                      <small *ngIf=" lastname?.errors?.required" class="text-danger">lastname required</small><br>
+                      <small *ngIf=" lastname?.errors?.pattern" class="text-danger">lastname invalid</small><br>
+                      <small *ngIf=" lastname?.errors?.minlength" class="text-danger">lastname must contain two characters
+                          at least</small>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" formControlName="email" >
+                  <div *ngIf="email?.touched && email?.invalid">
+                    <small *ngIf=" email?.errors?.required" class="text-danger">email required</small><br>
+                    <small *ngIf=" email?.errors?.email" class="text-danger">email invalid</small><br>
+                </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password"  formControlName="password">
+                    <div *ngIf="password?.touched && password?.invalid">
+                      <small *ngIf=" password?.errors?.required" class="text-danger">password required</small><br>
+                      <small *ngIf=" password?.errors?.minlength" class="text-danger">password must contain 8 number at
+                          least</small>
+                  </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" formControlName="repassword">
+                    <div *ngIf="repassword?.touched && repassword?.invalid">
+                      <small *ngIf=" repassword?.errors?.required" class="text-danger">password required</small><br>
+                      <small *ngIf=" repassword?.errors?.minlength" class="text-danger">password must contain 8 number at
+                          least</small>
+                  </div>
+                  <div *ngIf ="repassword?.valid && repassword?.value != password?.value" class="text-danger">
+                    the passwords entered do not to match
+                </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]="registerForm.invalid || repassword?.value != password?.value ">
+                  Register Account
+                </button>
+                <hr>
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <i class="fab fa-google fa-fw"></i> Register with Google
+                </a>
+                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                </a>
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" [routerLink]='["/login"]'>Forgot Password?</a>
+              </div>
+              <div class="text-center">
+                <a class="small" [routerLink]='["/login"]'>Already have an account? Login!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+

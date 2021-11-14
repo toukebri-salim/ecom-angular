@@ -1,0 +1,77 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" [routerLink]='["/"]'>
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li *ngIf="isLoggedAdmin" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/dashboard"]'>
+        <i class="fas fa-chart-pie"></i>
+        <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+
+    <li *ngIf="isLoggedAdmin" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/admin/category/list"]'>
+        <i class="fas fa-tools"></i>
+        <span>categories management</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li *ngIf="isLoggedAdmin" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/admin/product/list"]'>
+        <i class="fas fa-tools"></i>
+        <span>products management</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li *ngIf="isLoggedAdmin" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/admin/client/list"]'>
+        <i class="fas fa-address-book"></i>
+        <span>clients management</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li *ngIf="isLoggedAdmin" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/admin/order/list"]'>
+        <i class="fas fa-people-carry"></i>
+        <span>order management</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li *ngIf="isLoggedClient" class="nav-item active">
+      <a class="nav-link" [routerLink]='["/client/orders/myorders"]'>
+        <i class="fas fa-truck-moving"></i>
+        <span>my orders</span></a>
+    </li>
+
+    <!-- Divider -->
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+  </ul>
+  
