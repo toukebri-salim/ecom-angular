@@ -1,0 +1,190 @@
+ <!-- Page Wrapper -->
+ <div id="wrapper">
+
+    <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <app-topbar></app-topbar>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Order Details</h1>
+
+
+          </div>
+
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+
+                  <h6 class="m-0 font-weight-bold text-primary ">Products</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+
+
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Reference</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+
+                        <th>
+                          <h5 class="m-0 font-weight-bold text-success ">TOTAL</h5>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" style="padding-top: 50px;">125485694587</th>
+                        <td> <img style=" width: 150px; height: 100px;" src="./../../../assets/images/700x400.png"
+                            alt="...">
+                        </td>
+                        <td style="padding-top: 50px;"> Iphone 4</td>
+                        <td style="padding-top: 50px;">4</td>
+                        <td style="padding-top: 50px;"> 500DT</td>
+                        <td style="padding-top: 50px;"> Confirmed</td>
+                        <td style="padding-top: 50px;">
+                          <h6 class="m-0 font-weight-bold text-dark ">2000DT</h6>
+                        </td>
+
+
+
+
+
+
+
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row" style="padding-top: 50px;">125485236587</th>
+                        <td> <img style=" width: 150px; height: 100px;" src="./../../../assets/images/700x400.png"
+                            alt="...">
+                        </td>
+                        <td style="padding-top: 50px;"> Laptop</td>
+                        <td style="padding-top: 50px;">1</td>
+                        <td style="padding-top: 50px;"> 5000DT</td>
+                        <td style="padding-top: 50px;"> Pending..</td>
+                        <td style="padding-top: 50px;">
+                          <h6 class="m-0 font-weight-bold text-dark ">5000DT</h6>
+                        </td>
+
+
+                      </tr>
+
+
+                    </tbody>
+
+
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <h5 class="m-0 font-weight-bold text-success ">7000DT</h5>
+
+
+                        </td>
+
+
+
+
+
+                      </tr>
+
+
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td> <button type="button" class="btn btn-success btn-sm"><i class="fas fa-check"></i></button>
+                          <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+                        </td>
+                        </tr>
+                    </tbody>
+                  
+                  </table>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+<app-bottonbar></app-bottonbar>
+      <!-- Ed of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" [routerLink]='["/"]'>Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>

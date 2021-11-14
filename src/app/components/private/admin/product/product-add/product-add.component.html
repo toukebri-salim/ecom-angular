@@ -1,0 +1,189 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-topbar></app-topbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Add Product</h1>
+
+
+                </div>
+
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <!-- Area Chart -->
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Add Product's Details</h6>
+
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <form [formGroup]="addProductForm" (ngSubmit)="productAdd()" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="name">Name :</label>
+                                        <input type="text" name="name" id="name" class="form-control form-control-sm"
+                                            formControlName="name">
+                                        <div *ngIf="name?.touched && name?.invalid">
+                                            <small *ngIf=" name?.errors?.required" class="text-danger">name
+                                                required</small><br>
+                                            <small *ngIf=" name?.errors?.pattern" class="text-danger">name
+                                                invalid</small><br>
+                                            <small *ngIf=" name?.errors?.minlength" class="text-danger">name must
+                                                contain two characters at least</small>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label for="name">Description :</label>
+                                        <input type="text" name="name" id="name" class="form-control form-control-sm"
+                                            formControlName="description">
+                                        <div *ngIf="description?.touched && description?.invalid">
+                                            <small *ngIf=" description?.errors?.required"
+                                                class="text-danger">description
+                                                required</small><br>
+                                            <small *ngIf=" description?.errors?.pattern" class="text-danger">description
+                                                invalid</small><br>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name">Price :</label>
+                                        <input type="text" name="name" id="name" class="form-control form-control-sm"
+                                            formControlName="price">
+                                        <div *ngIf="price?.touched && price?.invalid">
+                                            <small *ngIf=" price?.errors?.required" class="text-danger">price
+                                                required</small><br>
+                                            <small *ngIf=" price?.errors?.pattern" class="text-danger">price
+                                                invalid</small><br>
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="name">Image :</label><br>
+
+                                        <img class="w-25" src="{{imageUrl}}">
+
+
+                                        <input (change)="onFileSelect($event)" type="file" style="margin-left: 20px; margin-bottom: 20px;"
+                                            class="form-control" formControlName="image">
+
+                                        <div *ngIf="image?.touched && image?.invalid">
+                                            <small *ngIf=" image?.errors?.required" class="text-danger">image
+                                                required</small><br>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="name">Category :</label>
+
+                                        <select class="container-fluid, form-control"
+                                            aria-label="Default select example" formControlName="categoryId">
+
+                                            <option *ngFor="let category of categoryList" value="{{category._id}}">
+                                                {{category.name}}</option>
+                                        </select>
+                                        <div *ngIf="categoryId?.touched && categoryId?.invalid">
+                                            <small *ngIf=" categoryId?.errors?.required" class="text-danger">category
+                                                required</small><br>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Add Product" [disabled]="addProductForm.invalid"
+                                            class="btn btn-info">
+
+                                    </div>
+
+
+
+
+                                </form>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <app-bottonbar></app-bottonbar>
+
+            <!-- /.container-fluid -->
+
+
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!-- End of Footer -->
+
+            <!-- End of Content Wrapper -->
+
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" [routerLink]='["/login"]'>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>

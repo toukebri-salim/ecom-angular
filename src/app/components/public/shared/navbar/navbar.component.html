@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top, hot">
+    <div class="container">
+      <a class="navbar-brand"  [routerLink]='["/"]'>Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+  
+  
+          <li class="nav-item active">
+  
+            <a class="nav-link" [routerLink]='["/"]'>Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='[""]'>Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]='["/dashboard"]'>Dashboard</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cart-number" class="badge badge-light badge-pill">0</span>
+            </a>
+          </li>
+  
+          <li class="nav-item">
+            <a *ngIf ="!isLoggedIn" class="nav-link"  [routerLink]='["/login"]'>Login</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf ="!isLoggedIn" class="nav-link"  [routerLink]='["/register"]'>Register</a>
+          </li>
+          <li class="nav-item">
+            <a  *ngIf ="isLoggedIn" class="btn btn-danger text-light mx-3 my-2 my-sm-0"  (click) ="logout()">Logout</a>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
